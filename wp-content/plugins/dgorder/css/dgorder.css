@@ -1,0 +1,199 @@
+#dg-content h3{
+font-family: "Open Sans", Helvetica, Arial, sans-serif;
+font-size: 16px;
+}
+#dg-step2-cont {
+    display: none;
+}
+#dg-crop-cont {
+    height: 600px;
+}
+#dg-crop-img {
+    position: absolute;
+    display: block;
+    height: 600px;
+}
+#dg-crop-facture {
+    position: absolute;
+    z-index: 1;
+    height: 600px;
+    width:  600px;
+}
+.dg-sel-fac {
+    cursor: pointer;
+}
+.dg-sel-steps {
+    cursor: pointer;
+}
+
+.dgorder_admin_edit_image {
+    max-height: 40px;
+    vertical-align: middle;
+    margin: 0 2% 0 0;
+}
+
+.facture-image {
+    cursor: pointer;
+    border: 1px solid black;
+}
+.facture-image-active {
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.dgorder #form-message {
+    color: #8bc53f;
+    font-weight: bold;
+}
+
+.facture-name {
+    line-height: normal;
+    margin-top: 15px;
+    margin-bottom: 5px;
+	font-size: 9pt;
+/*	height: 35px;*/
+    text-align: center;
+word-break: break-word;
+}
+#form-error {
+    color: red;
+    display: none;
+}
+.facture {
+/* padding-bottom: 10px;*/
+ }
+.facture-active {
+    background-color: #03a9f4;
+	color: white;
+}
+#corder {
+	font-size:16px;
+}
+#list-factures .normal-column {
+	padding-left:10px;
+    padding-right: 10px;
+}
+#list-factures img {
+/*	height: 80px;
+	width: 80px;*/
+}
+#dg-content #list-factures .row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#dg-options .col-lg-2,#dg-options .col-lg-12{
+	padding-left:5px;
+    padding-right: 5px;	
+}
+.dg-aspect-Ratio-box label{
+    font-weight: 100;
+}
+.dg-summe-value {
+    font-weight: 600;
+}
+.factura-head{
+    font-size: 16px;
+/*    font-weight: bold;*/
+    margin-top: 30px;
+}
+#dg-content .nopad {
+	padding-left: 0px;
+    padding-right: 0px;
+}
+#dg-content .row {
+	margin-left: -15px;
+    margin-right: -15px;
+/*	width: 100%;*/
+margin-bottom: 12px;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+#dg-options label ,#dg-options .dg-square-name, #dg-options .dg-summe-name{
+	font-size: 12px;
+	color: #6B7C93;
+}
+#dg-options input {
+	padding: 2px;
+	width: 44px;
+    line-height: 20px;
+	height: auto;
+	color: #6B7C93;
+}
+.dg-aspect-Ratio-box {
+	font-size: 14px;
+	margin-top: 5px;
+}
+.clearfix {
+	clear: both;
+}
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+.dg-b-input {
+	float: none !important;
+	margin-right: 0px !important;
+}
+.dg-b-input input {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+#dg-content .order-content {
+	margin-top: 15px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+/*  display: flex;
+  flex-direction: column;*/
+}
+.dg-move-polz {
+	font-size: 16px;
+	margin-top: 10px;
+}
+#btn-order  {
+	margin-top: 5px;
+	background: #03a9f4;
+    color: white;
+/*	font-family: Montserrat, sans-serif;*/
+	font-size: 14px;
+}
+#dgorder-back  {
+/*	font-family: Montserrat, sans-serif;*/
+	font-size: 14px;
+    height: inherit;
+    line-height: 15px;
+    padding: .6em 1em .4em;
+    text-align: center;
+/*    border: 1px solid #ccc;
+    border-color: #ccc #ccc #bbb #ccc;
+    border-radius: 3px;
+    background: #fff;  */
+    color: rgba(0, 0, 0, .8);
+}
+/*#dgorder-form input[type="button"] {*/
+.dgorder-submit {
+/*	font-family: Montserrat, sans-serif;*/
+	font-size: 14px;
+transition: all .3s linear;
+}
+.dgorder-submit:hover {
+	background-color: #03a9f4;
+}
