@@ -61,7 +61,7 @@ function dgSendOrder()
 	if( isset($_POST['Note']) && $_POST['Note'] != '' ) {
 		$message .= "Комментарий к заказу :\n".$_POST['Note'];
 	}
-	
+
 
     $file = dgCropImage($_POST['img_id']);
 
@@ -77,10 +77,14 @@ add_shortcode('dgorder', 'dgOrder');
 function dgOrder()
 {
     global $wpdb;
+    $ws = false;
 
     if (isset($_GET['id']) && $_GET['id'] != 0) {
         $img_id = $_GET['id'];
         $img = wp_get_attachment_image_src($img_id, 'full');
+        if( strpos($img[0],'ws_') > 0) {
+            $ws = true;
+        }
         $img_name = get_the_title($_GET['id']);
         $aspect_ratio = $img[1] / $img[2];
         $dgOrder_settings = get_option('dgOrder_settings');
@@ -164,6 +168,9 @@ function dgOrder()
                         $image_id = $row->image;
                         $row->image = wp_get_attachment_image_src($row->image, 'thumbnail');
                         $row->image = $row->image[0];
+                        if( ($ws && strpos($row->image,'ws_') === false)
+                        || (!$ws && strpos($row->image,'ws_') > 0) )
+                            continue;
                         $image_name = explode('/', $row->image);
                         $image_name = $image_name[count($image_name) - 1];
                         if ($row->image) {
@@ -242,7 +249,7 @@ function dgOrder()
 
                     <p>Ваш e-mail (обязательно)<br>
                         <span class="dgorder-form-control-wrapl"><input type="email" id="formEmail" name="Email"
-                                                                        value="" 
+                                                                        value=""
                                                                         class="dgorder-form-control dgorder-text "
                                                                         aria-required="true"
                                                                         aria-invalid="false"></span></p>
@@ -364,8 +371,8 @@ function dgCropImage($imgid)
     $aspect_ratio = $img[1] / $img[2];
     $image_w = $img[1];
     $image_h = $img[2];
-//    $ratio_h = $img[2] / 400; 
-//    $ratio_w = $img[1] / (400 * $aspect_ratio); 
+//    $ratio_h = $img[2] / 400;
+//    $ratio_w = $img[1] / (400 * $aspect_ratio);
     $ratio_h = $img[2] / $height; //2.0175
     $ratio_w = $img[1] / ($height * $aspect_ratio); //2.017
 
