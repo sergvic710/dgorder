@@ -5,7 +5,7 @@ jQuery( document ).ready( function() {
             event.preventDefault();
             // If the media frame already exists, reopen it.
             if ( file_frame ) {
-                file_frame.url_input = jQuery( this ).attr( 'data-input' );
+                file_frame.url_input = jQuery('input.upload_image_button').data('url-input');
                 file_frame.open();
                 return;
             }
