@@ -1,7 +1,7 @@
 jQuery( document ).ready( function() {
         // Uploading files
         var file_frame;
-        jQuery( '.upload_image_button' ).live( 'click', function( event ) {
+        jQuery( '.upload_image_button' ).on( 'click', function( event ) {
             event.preventDefault();
             // If the media frame already exists, reopen it.
             if ( file_frame ) {
@@ -17,7 +17,8 @@ jQuery( document ).ready( function() {
                 },
                 multiple: false  // Set to true to allow multiple files to be selected
             });
-            file_frame.url_input = jQuery( this ).attr( 'data-url-input' );
+//            file_frame.url_input = jQuery( this ).attr( 'data-url-input' );
+            file_frame.url_input = jQuery('input.upload_image_button').data('url-input');
             // When an image is selected, run a callback.
             file_frame.on( 'select', function() {
                 // We set multiple to false so only get one image from the uploader
